@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Vídeo em AR.js</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <video id="videolindo" src="sabinocabelo.mp4" autoplay loop muted playsinline webkit-playsinline style="display:none;"></video>
+
+    <a-scene embedded arjs="debugUIEnabled: false">
+      <a-marker preset="hiro">
+        <a-video src="sabinocabelo.mp4" position="0 0.5 0" rotation="0 0 0" width="2" height="1"></a-video>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+      window.addEventListener('load', () => {
+        const video = document.getElementById('videolindo');
+        video.play().catch(err => {
+          console.warn('Erro ao iniciar vídeo:', err);
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
     <title>Terceira experiência de Realidade aumentada com o hiro</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
@@ -15,7 +43,7 @@
     </a-scene>
   </body>
 </html>
-
+ -->
 
 
 <!-- <!DOCTYPE html>
