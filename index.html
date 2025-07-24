@@ -8,15 +8,14 @@
   <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
       
-  
       <a-assets>
-        <video id="camera" src="video camera.mp4" preload="auto" loop="true" crossorigin="anonymous" webkit-playsinline playsinline></video>
+        <video id="camera" src="video camera.mp4" preload="auto" loop="true" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
       </a-assets>
 
       <a-marker type="pattern" url="pattern-quixabala.patt">
         <a-video 
           src="#camera" 
-          position="0 0 0" 
+          position="0 -20 0" 
           rotation="-90 0 0" 
           width="1.5" 
           height="1">
@@ -24,8 +23,16 @@
       </a-marker>
 
       <a-entity camera></a-entity>
-
     </a-scene>
+
+    <script>
+      document.addEventListener("click", function () {
+        const video = document.querySelector("#camera");
+        if (video) {
+          video.play();
+        }
+      });
+    </script>
   </body>
 </html>
 
