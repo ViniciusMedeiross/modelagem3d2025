@@ -7,10 +7,12 @@
   </head>
   <body style="margin: 0; overflow: hidden;">
     <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
-      <a-assets>
+<!--       <a-assets>
         <a-asset-item id="bola" src="teste.glb"></a-asset-item>
-      </a-assets>
+      </a-assets> -->
+
       <a-marker type="pattern" url="pattern-Ativo 2@2x-8zz.patt">
+        <a-image src="minha-imagem.png" position="0 0 0" rotation="-90 0 0" scale="1 1 1"></a-image>
         <a-entity id="bolabola" gltf-model="#bola"></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
